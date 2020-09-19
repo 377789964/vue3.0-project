@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h4>Welcome to Vue3.0</h4>
+    <!-- <HelloWorld/> -->
+    <!-- <Child childMsg="child-component"/> -->
+    <!-- <Child1/> -->
+    <watch-component/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import Child from "./components/child"
+// import Child1 from "./components/child1"
+import WatchComponent from "./components/watchComponent"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld,
+    // Child,
+    // Child1,
+    WatchComponent
+
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

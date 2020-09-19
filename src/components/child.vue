@@ -3,35 +3,26 @@
     <h4>{{ msg }}</h4>
     <p>{{ data.count }}</p>
     <button @click="addCount">++</button>
+    <p>{{ childMsg }}</p>
   </div>
 </template>
 
 <script>
 import { reactive } from 'vue'
 export default {
-  name: 'HelloWorld',
-  // vue2.0x写法
-  // data: function() {
-  //   return {
-  //     msg: 'Welcome to Vue3.0',
-  //     count : 0
-  //   }
-  // },
-  // methods: {
-  //   addCount() {
-  //     this.count++
-  //   }
-  // }
-  // vue3.0写法
-  setup() {
+  name: 'Child',
+  // props中的属性不需要在setup函数中返回，模板中可以直接访问属性 与2.0用法一致
+  props: {
+    childMsg: String
+  },
+  setup(props, context) {
+    console.log(props) // Proxy对象 是响应式对象，解构会失去响应式
+    // context: 代替vue2.0的this
+    console.log(context) // 只有attr emit slots三个属性
     const msg = 'Welcome to Vue3.0'
     const data = reactive({
       count: 0
     })
-    // data不能结构返回，解构返回会失去响应式
-    // return {
-    //   ...data
-    // }
     function addCount() {
       data.count++
     }

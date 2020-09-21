@@ -1,40 +1,24 @@
 <template>
   <div id="app">
-    <h4>Welcome to Vue3.0</h4>
-    <!-- <HelloWorld/> -->
-    <!-- <Child childMsg="child-component"/> -->
-    <!-- <Child1/> -->
-    <!-- <watch-component/> -->
-    <!-- <life-cycle/> -->
-    <!-- <Ref/> -->
-    <Provide/>
+    <h3>Welcome to Vue3.0</h3>
+    <router-link to="/">home</router-link>
+    <span class="mr50px"></span>
+    <router-link to='/use'>use</router-link>
+    <router-view></router-view>
+    
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import Child from "./components/child"
-// import Child1 from "./components/child1"
-// import WatchComponent from "./components/watchComponent"
-// import LifeCycle from "./components/lifeCycle"
-// import Ref from "./components/Ref"
-import Provide from "./components/Provide"
+
 
 export default {
-  name: 'App',
-  components: {
-    // HelloWorld,
-    // Child,
-    // Child1,
-    // WatchComponent,
-    // LifeCycle,
-    // Ref,
-    Provide
-  }
+  name: 'App'
 }
 </script>
 
-<style>
-#app {
+<style scoped>
+.mr50px {
+  margin-right: 20px;
 }
 </style>

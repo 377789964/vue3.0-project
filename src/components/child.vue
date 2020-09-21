@@ -4,13 +4,19 @@
     <p>{{ data.count }}</p>
     <button @click="addCount">++</button>
     <p>{{ childMsg }}</p>
+    <hr>
+    <Inject />
   </div>
 </template>
 
 <script>
 import { reactive } from 'vue'
+import Inject from './Inject'
 export default {
   name: 'Child',
+  components: {
+    Inject
+  },
   // props中的属性不需要在setup函数中返回，模板中可以直接访问属性 与2.0用法一致
   props: {
     childMsg: String

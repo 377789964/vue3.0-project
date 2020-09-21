@@ -3,7 +3,7 @@
     <p>count: {{ data.count }}</p>
     <button @click="addCount">++</button>
     <p>count: {{ data.count1 }}</p>
-    <br>
+    <hr>
     <p>count3: {{ count3 }}</p>
     <button @click="addCount3">++</button>
   </div>

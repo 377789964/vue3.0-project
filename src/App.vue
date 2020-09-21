@@ -4,7 +4,10 @@
     <!-- <HelloWorld/> -->
     <!-- <Child childMsg="child-component"/> -->
     <!-- <Child1/> -->
-    <watch-component/>
+    <!-- <watch-component/> -->
+    <!-- <life-cycle/> -->
+    <!-- <Ref/> -->
+    <Provide/>
   </div>
 </template>
 
@@ -12,7 +15,10 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import Child from "./components/child"
 // import Child1 from "./components/child1"
-import WatchComponent from "./components/watchComponent"
+// import WatchComponent from "./components/watchComponent"
+// import LifeCycle from "./components/lifeCycle"
+// import Ref from "./components/Ref"
+import Provide from "./components/Provide"
 
 export default {
   name: 'App',
@@ -20,8 +26,10 @@ export default {
     // HelloWorld,
     // Child,
     // Child1,
-    WatchComponent
-
+    // WatchComponent,
+    // LifeCycle,
+    // Ref,
+    Provide
   }
 }
 </script>

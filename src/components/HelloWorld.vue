@@ -1,43 +1,29 @@
 <template>
   <div class="hello">
     <h4>{{ msg }}</h4>
-    <p>{{ data.count }}</p>
+    <p>{{ count }}</p>
     <button @click="addCount">++</button>
   </div>
 </template>
 
 <script>
-import { reactive } from 'vue'
+// 使用自定义的hooks
+import useCounter from '../hooks/useCounter'
 export default {
   name: 'HelloWorld',
-  // vue2.0x写法
-  // data: function() {
-  //   return {
-  //     msg: 'Welcome to Vue3.0',
-  //     count : 0
-  //   }
-  // },
-  // methods: {
-  //   addCount() {
-  //     this.count++
-  //   }
-  // }
   // vue3.0写法
   setup() {
     const msg = 'Welcome to Vue3.0'
-    const data = reactive({
-      count: 0
-    })
-    // data不能结构返回，解构返回会失去响应式
-    // return {
-    //   ...data
-    // }
-    function addCount() {
-      data.count++
-    }
+    // // data不能结构返回，解构返回会失去响应式
+    // // return {
+    // //   ...data
+    // // }
+    console.log(useCounter(), 'useCounter')
+    //这里解构data依然具有响应式，因为在hooks文件内使用了toRefs方法
+    const { data: {count}, addCount } = useCounter()
     return {
       msg,
-      data,
+      count,
       addCount
     }
   }
